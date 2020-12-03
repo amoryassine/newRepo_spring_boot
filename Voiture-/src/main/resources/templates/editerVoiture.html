@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Ajout des Produits</title>
+</head>
+
+<body>
+<div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+<div class="card-header">
+Modifier des Voiture
+</div>
+<div class="card-body">
+<form th:action="@{saveVoiture}" method="post">
+
+<div class="form-group">
+<label class="control-label" hidden>ID Voiture :</label>
+<input type="hidden" name="idvoiture" class="form-control" th:value="${voiture.idvoiture}" />
+</div>
+
+
+<div class="form-group">
+<label class="control-label">marque :</label>
+<input type="text" name="marque" class="form-control" th:value="${voiture.marque}" />
+<span th:errors= ${voiture.marque} class="text-danger"> 
+</span>
+</div>
+
+
+<div class="form-group">
+<label class="control-label">modele :</label>
+<input type="text" name="modele" class="form-control" th:value="${voiture.modele}" />
+<span th:errors= ${voiture.modele} class="text-danger"> 
+</span>
+</div>
+
+<div class="form-group">
+<label class="control-label">immatriculation :</label>
+<input type="text" name="immatriculation" class="form-control" th:value="${voiture.immatriculation}" />
+<span th:errors= ${voiture.immatriculation} class="text-danger"> 
+</span>
+</div>
+
+<div class="form-group">
+<label class="control-label">couleur :</label>
+<input type="text" name="couleur" class="form-control" th:value="${voiture.couleur}" />
+<span th:errors= ${voiture.couleur} class="text-danger"> 
+</span>
+</div>
+
+<div class="form-group">
+<label class="control-label">puissance_fiscale :</label>
+<input type="text" name="puissance_fiscale" class="form-control" th:value="${voiture.puissance_fiscale}" />
+<span th:errors= ${voiture.puissance_fiscale} class="text-danger"> 
+</span>
+</div>
+
+<div class="form-group">
+<label class="control-label">prix_par_heure :</label>
+<input type="text" name="prix_par_heure" class="form-control" th:value="${voiture.prix_par_heure}" />
+<span th:errors= ${voiture.prix_par_heure} class="text-danger"> 
+</span>
+</div>
+
+
+
+
+<div class="form-group">
+<label class="control-label">date création Voiture :</label>
+<input type="date" name="date_creation_voiture" class="form-control" th:value="${produit.date_creation_voiture}"/>
+<span th:errors=${produit.date_creation_voiture} class="text-danger"> </span>
+</div>
+
+
+<div>
+<button type="submit" class="btn btn-primary">Valider</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
